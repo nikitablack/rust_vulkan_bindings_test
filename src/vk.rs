@@ -1,62 +1,67 @@
 pub const VK_MAX_EXTENSION_NAME_SIZE: usize = 256;
+pub const VK_MAX_PHYSICAL_DEVICE_NAME_SIZE: usize = 256;
+pub const VK_UUID_SIZE: usize = 16;
 
 #[allow(dead_code)]
+#[allow(non_camel_case_types)]
 #[repr(C)]
 #[derive(PartialEq, Eq, Debug)]
 pub enum VkResult {
-    VkSuccess = 0,
-    VkNotReady = 1,
-    VkTimeout = 2,
-    VkEventSet = 3,
-    VkEventReset = 4,
-    VkIncomplete = 5,
-    VkErrorOutOfHostMemory = -1,
-    VkErrorOutOfDeviceMemory = -2,
-    VkErrorInitializationFailed = -3,
-    VkErrorDeviceLost = -4,
-    VkErrorMemoryMapFailed = -5,
-    VkErrorLayerNotPresent = -6,
-    VkErrorExtensionNotPresent = -7,
-    VkErrorFeatureNotPresent = -8,
-    VkErrorIncompatibleDriver = -9,
-    VkErrorTooManyObjects = -10,
-    VkErrorFormatNotSupported = -11,
-    VkErrorFragmentedPool = -12,
-    VkErrorUnknown = -13,
-    VkErrorOutOfPoolMemory = -1000069000,
-    VkErrorInvalidExternalHandle = -1000072003,
-    VkErrorFragmentation = -1000161000,
-    VkErrorInvalidOpaqueCaptureAddress = -1000257000,
-    VkErrorSurfaceLostKHR = -1000000000,
-    VkErrorNativeWindowInUseKHR = -1000000001,
-    VkSuboptimalKHR = 1000001003,
-    VkErrorOutOfDateKHR = -1000001004,
-    VkErrorIncompatibleDisplayKHR = -1000003001,
-    VkErrorValidationFailedEXT = -1000011001,
-    VkErrorInvalidShaderNV = -1000012000,
-    VkErrorIncompatibleVersionKHR = -1000150000,
-    VkErrorInvalidDrmFormatModifierPlaneLayoutEXT = -1000158000,
-    VkErrorNotPermittedEXT = -1000174001,
-    VkErrorFullScreenExclusiveModeLostEXT = -1000255000,
-    VkThreadIdleKHR = 1000268000,
-    VkThreadDoneKHR = 1000268001,
-    VkOperationDeferredKHR = 1000268002,
-    VkOperationNotDeferredKHR = 1000268003,
-    VkPipelineCompileRequiredEXT = 1000297000,
-    VkResultMaxEnum = 0x7FFFFFFF,
+    VK_SUCCESS = 0,
+    VK_NOT_READY = 1,
+    VK_TIMEOUT = 2,
+    VK_EVENT_SET = 3,
+    VK_EVENT_RESET = 4,
+    VK_INCOMPLETE = 5,
+    VK_ERROR_OUT_OF_HOST_MEMORY = -1,
+    VK_ERROR_OUT_OF_DEVICE_MEMORY = -2,
+    VK_ERROR_INITIALIZATION_FAILED = -3,
+    VK_ERROR_DEVICE_LOST = -4,
+    VK_ERROR_MEMORY_MAP_FAILED = -5,
+    VK_ERROR_LAYER_NOT_PRESENT = -6,
+    VK_ERROR_EXTENSION_NOT_PRESENT = -7,
+    VK_ERROR_FEATURE_NOT_PRESENT = -8,
+    VK_ERROR_INCOMPATIBLE_DRIVER = -9,
+    VK_ERROR_TOO_MANY_OBJECTS = -10,
+    VK_ERROR_FORMAT_NOT_SUPPORTED = -11,
+    VK_ERROR_FRAGMENTED_POOL = -12,
+    VK_ERROR_UNKNOWN = -13,
+    VK_ERROR_OUT_OF_POOL_MEMORY = -1000069000,
+    VK_ERROR_INVALID_EXTERNAL_HANDLE = -1000072003,
+    VK_ERROR_FRAGMENTATION = -1000161000,
+    VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS = -1000257000,
+    VK_ERROR_SURFACE_LOST_KHR = -1000000000,
+    VK_ERROR_NATIVE_WINDOW_IN_USE_KHR = -1000000001,
+    VK_SUBOPTIMAL_KHR = 1000001003,
+    VK_ERROR_OUT_OF_DATE_KHR = -1000001004,
+    VK_ERROR_INCOMPATIBLE_DISPLAY_KHR = -1000003001,
+    VK_ERROR_VALIDATION_FAILED_EXT = -1000011001,
+    VK_ERROR_INVALID_SHADER_NV = -1000012000,
+    VK_ERROR_INCOMPATIBLE_VERSION_KHR = -1000150000,
+    VK_ERROR_INVALID_DRM_FORMAT_MODIFIER_PLANE_LAYOUT_EXT = -1000158000,
+    VK_ERROR_NOT_PERMITTED_EXT = -1000174001,
+    VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT = -1000255000,
+    VK_THREAD_IDLE_KHR = 1000268000,
+    VK_THREAD_DONE_KHR = 1000268001,
+    VK_OPERATION_DEFERRED_KHR = 1000268002,
+    VK_OPERATION_NOT_DEFERRED_KHR = 1000268003,
+    VK_PIPELINE_COMPILE_REQUIRED_EXT = 1000297000,
+    VK_RESULT_MAX_ENUM = 0x7FFFFFFF,
 }
 
 #[allow(dead_code)]
 #[allow(non_upper_case_globals)]
 impl VkResult {
-    pub const VkErrorOutOfPoolMemoryKHR: VkResult = VkResult::VkErrorOutOfPoolMemory;
-    pub const VkErrorInvalidExternalHandleKHR: VkResult = VkResult::VkErrorInvalidExternalHandle;
-    pub const VkErrorFragmentationEXT: VkResult = VkResult::VkErrorFragmentation;
-    pub const VkErrorInvalidDeviceAddressEXT: VkResult =
-        VkResult::VkErrorInvalidOpaqueCaptureAddress;
-    pub const VkErrorInvalidOpaqueCaptureAddressKHR: VkResult =
-        VkResult::VkErrorInvalidOpaqueCaptureAddress;
-    pub const VkErrorPipelineCompileRequiredEXT: VkResult = VkResult::VkPipelineCompileRequiredEXT;
+    pub const VK_ERROR_OUT_OF_POOL_MEMORY_KHR: VkResult = VkResult::VK_ERROR_OUT_OF_POOL_MEMORY;
+    pub const VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR: VkResult =
+        VkResult::VK_ERROR_INVALID_EXTERNAL_HANDLE;
+    pub const VK_ERROR_FRAGMENTATION_EXT: VkResult = VkResult::VK_ERROR_FRAGMENTATION;
+    pub const VK_ERROR_INVALID_DEVICE_ADDRESS_EXT: VkResult =
+        VkResult::VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS;
+    pub const VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS_KHR: VkResult =
+        VkResult::VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS;
+    pub const VK_ERROR_PIPELINE_COMPILE_REQUIRED_EXT: VkResult =
+        VkResult::VK_PIPELINE_COMPILE_REQUIRED_EXT;
 }
 
 #[allow(dead_code)]
@@ -832,8 +837,276 @@ pub struct VkInstance {
     pub type VkInstance;
 }*/
 
+#[repr(C)]
+pub struct VkSurfaceKHR {
+    _private: [u8; 0],
+}
+
+#[cfg(target_os = "windows")]
+#[repr(C)]
+#[allow(non_snake_case)]
+pub struct VkWin32SurfaceCreateInfoKHR {
+    pub sType: VkStructureType,
+    pub pNext: *const std::ffi::c_void,
+    pub flags: u32,
+    pub hinstance: *mut std::ffi::c_void,
+    pub hwnd: *mut std::ffi::c_void,
+}
+
+#[repr(C)]
+pub struct VkPhysicalDevice {
+    _private: [u8; 0],
+}
+
 #[allow(dead_code)]
-#[link(name = "vulkan")]
+#[allow(non_camel_case_types)]
+#[repr(C)]
+#[derive(PartialEq, Eq, Debug)]
+pub enum VkPhysicalDeviceType {
+    VK_PHYSICAL_DEVICE_TYPE_OTHER = 0,
+    VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU = 1,
+    VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU = 2,
+    VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU = 3,
+    VK_PHYSICAL_DEVICE_TYPE_CPU = 4,
+    VK_PHYSICAL_DEVICE_TYPE_MAX_ENUM = 0x7FFFFFFF,
+}
+
+#[allow(dead_code)]
+#[allow(non_camel_case_types)]
+#[repr(C)]
+#[derive(PartialEq, Eq, Debug)]
+pub enum VkSampleCountFlagBits {
+    VK_SAMPLE_COUNT_1_BIT = 0x00000001,
+    VK_SAMPLE_COUNT_2_BIT = 0x00000002,
+    VK_SAMPLE_COUNT_4_BIT = 0x00000004,
+    VK_SAMPLE_COUNT_8_BIT = 0x00000008,
+    VK_SAMPLE_COUNT_16_BIT = 0x00000010,
+    VK_SAMPLE_COUNT_32_BIT = 0x00000020,
+    VK_SAMPLE_COUNT_64_BIT = 0x00000040,
+    VK_SAMPLE_COUNT_FLAG_BITS_MAX_ENUM = 0x7FFFFFFF,
+}
+
+#[repr(C)]
+#[allow(non_snake_case)]
+#[derive(Debug, Default)]
+pub struct VkPhysicalDeviceLimits {
+    pub maxImageDimension1D: u32,
+    pub maxImageDimension2D: u32,
+    pub maxImageDimension3D: u32,
+    pub maxImageDimensionCube: u32,
+    pub maxImageArrayLayers: u32,
+    pub maxTexelBufferElements: u32,
+    pub maxUniformBufferRange: u32,
+    pub maxStorageBufferRange: u32,
+    pub maxPushConstantsSize: u32,
+    pub maxMemoryAllocationCount: u32,
+    pub maxSamplerAllocationCount: u32,
+    pub bufferImageGranularity: u64,
+    pub sparseAddressSpaceSize: u64,
+    pub maxBoundDescriptorSets: u32,
+    pub maxPerStageDescriptorSamplers: u32,
+    pub maxPerStageDescriptorUniformBuffers: u32,
+    pub maxPerStageDescriptorStorageBuffers: u32,
+    pub maxPerStageDescriptorSampledImages: u32,
+    pub maxPerStageDescriptorStorageImages: u32,
+    pub maxPerStageDescriptorInputAttachments: u32,
+    pub maxPerStageResources: u32,
+    pub maxDescriptorSetSamplers: u32,
+    pub maxDescriptorSetUniformBuffers: u32,
+    pub maxDescriptorSetUniformBuffersDynamic: u32,
+    pub maxDescriptorSetStorageBuffers: u32,
+    pub maxDescriptorSetStorageBuffersDynamic: u32,
+    pub maxDescriptorSetSampledImages: u32,
+    pub maxDescriptorSetStorageImages: u32,
+    pub maxDescriptorSetInputAttachments: u32,
+    pub maxVertexInputAttributes: u32,
+    pub maxVertexInputBindings: u32,
+    pub maxVertexInputAttributeOffset: u32,
+    pub maxVertexInputBindingStride: u32,
+    pub maxVertexOutputComponents: u32,
+    pub maxTessellationGenerationLevel: u32,
+    pub maxTessellationPatchSize: u32,
+    pub maxTessellationControlPerVertexInputComponents: u32,
+    pub maxTessellationControlPerVertexOutputComponents: u32,
+    pub maxTessellationControlPerPatchOutputComponents: u32,
+    pub maxTessellationControlTotalOutputComponents: u32,
+    pub maxTessellationEvaluationInputComponents: u32,
+    pub maxTessellationEvaluationOutputComponents: u32,
+    pub maxGeometryShaderInvocations: u32,
+    pub maxGeometryInputComponents: u32,
+    pub maxGeometryOutputComponents: u32,
+    pub maxGeometryOutputVertices: u32,
+    pub maxGeometryTotalOutputComponents: u32,
+    pub maxFragmentInputComponents: u32,
+    pub maxFragmentOutputAttachments: u32,
+    pub maxFragmentDualSrcAttachments: u32,
+    pub maxFragmentCombinedOutputResources: u32,
+    pub maxComputeSharedMemorySize: u32,
+    pub maxComputeWorkGroupCount: [u32; 3],
+    pub maxComputeWorkGroupInvocations: u32,
+    pub maxComputeWorkGroupSize: [u32; 3],
+    pub subPixelPrecisionBits: u32,
+    pub subTexelPrecisionBits: u32,
+    pub mipmapPrecisionBits: u32,
+    pub maxDrawIndexedIndexValue: u32,
+    pub maxDrawIndirectCount: u32,
+    pub maxSamplerLodBias: f32,
+    pub maxSamplerAnisotropy: f32,
+    pub maxViewports: u32,
+    pub maxViewportDimensions: [u32; 2],
+    pub viewportBoundsRange: [f32; 2],
+    pub viewportSubPixelBits: u32,
+    pub minMemoryMapAlignment: usize,
+    pub minTexelBufferOffsetAlignment: u64,
+    pub minUniformBufferOffsetAlignment: u64,
+    pub minStorageBufferOffsetAlignment: u64,
+    pub minTexelOffset: i32,
+    pub maxTexelOffset: u32,
+    pub minTexelGatherOffset: i32,
+    pub maxTexelGatherOffset: u32,
+    pub minInterpolationOffset: f32,
+    pub maxInterpolationOffset: f32,
+    pub subPixelInterpolationOffsetBits: u32,
+    pub maxFramebufferWidth: u32,
+    pub maxFramebufferHeight: u32,
+    pub maxFramebufferLayers: u32,
+    pub framebufferColorSampleCounts: u32,
+    pub framebufferDepthSampleCounts: u32,
+    pub framebufferStencilSampleCounts: u32,
+    pub framebufferNoAttachmentsSampleCounts: u32,
+    pub maxColorAttachments: u32,
+    pub sampledImageColorSampleCounts: u32,
+    pub sampledImageIntegerSampleCounts: u32,
+    pub sampledImageDepthSampleCounts: u32,
+    pub sampledImageStencilSampleCounts: u32,
+    pub storageImageSampleCounts: u32,
+    pub maxSampleMaskWords: u32,
+    pub timestampComputeAndGraphics: u32,
+    pub timestampPeriod: f32,
+    pub maxClipDistances: u32,
+    pub maxCullDistances: u32,
+    pub maxCombinedClipAndCullDistances: u32,
+    pub discreteQueuePriorities: u32,
+    pub pointSizeRange: [f32; 2],
+    pub lineWidthRange: [f32; 2],
+    pub pointSizeGranularity: f32,
+    pub lineWidthGranularity: f32,
+    pub strictLines: u32,
+    pub standardSampleLocations: u32,
+    pub optimalBufferCopyOffsetAlignment: u64,
+    pub optimalBufferCopyRowPitchAlignment: u64,
+    pub nonCoherentAtomSize: u64,
+}
+
+#[repr(C)]
+#[allow(non_snake_case)]
+#[derive(Debug, Default)]
+pub struct VkPhysicalDeviceSparseProperties {
+    pub residencyStandard2DBlockShape: u32,
+    pub residencyStandard2DMultisampleBlockShape: u32,
+    pub residencyStandard3DBlockShape: u32,
+    pub residencyAlignedMipSize: u32,
+    pub residencyNonResidentStrict: u32,
+}
+
+#[repr(C)]
+#[allow(non_snake_case)]
+#[derive(Debug)]
+pub struct VkPhysicalDeviceProperties {
+    pub apiVersion: u32,
+    pub driverVersion: u32,
+    pub deviceID: u32,
+    pub vendorID: u32,
+    pub deviceType: VkPhysicalDeviceType,
+    pub deviceName: [std::os::raw::c_char; VK_MAX_PHYSICAL_DEVICE_NAME_SIZE],
+    pub pipelineCacheUUID: [u8; VK_UUID_SIZE],
+    pub limits: VkPhysicalDeviceLimits,
+    pub sparseProperties: VkPhysicalDeviceSparseProperties,
+}
+
+impl Default for VkPhysicalDeviceProperties {
+    fn default() -> VkPhysicalDeviceProperties {
+        VkPhysicalDeviceProperties {
+            apiVersion: 0,
+            driverVersion: 0,
+            deviceID: 0,
+            vendorID: 0,
+            deviceType: VkPhysicalDeviceType::VK_PHYSICAL_DEVICE_TYPE_MAX_ENUM,
+            deviceName: [0; VK_MAX_PHYSICAL_DEVICE_NAME_SIZE],
+            pipelineCacheUUID: [0; VK_UUID_SIZE],
+            limits: VkPhysicalDeviceLimits::default(),
+            sparseProperties: VkPhysicalDeviceSparseProperties::default(),
+        }
+    }
+}
+
+#[repr(C)]
+#[allow(non_snake_case)]
+#[derive(Default)]
+pub struct VkPhysicalDeviceFeatures {
+    pub robustBufferAccess: u32,
+    pub fullDrawIndexUint32: u32,
+    pub imageCubeArray: u32,
+    pub independentBlend: u32,
+    pub geometryShader: u32,
+    pub tessellationShader: u32,
+    pub sampleRateShading: u32,
+    pub dualSrcBlend: u32,
+    pub logicOp: u32,
+    pub multiDrawIndirect: u32,
+    pub drawIndirectFirstInstance: u32,
+    pub depthClamp: u32,
+    pub depthBiasClamp: u32,
+    pub fillModeNonSolid: u32,
+    pub depthBounds: u32,
+    pub wideLines: u32,
+    pub largePoints: u32,
+    pub alphaToOne: u32,
+    pub multiViewport: u32,
+    pub samplerAnisotropy: u32,
+    pub textureCompressionETC2: u32,
+    pub textureCompressionASTC_LDR: u32,
+    pub textureCompressionBC: u32,
+    pub occlusionQueryPrecise: u32,
+    pub pipelineStatisticsQuery: u32,
+    pub vertexPipelineStoresAndAtomics: u32,
+    pub fragmentStoresAndAtomics: u32,
+    pub shaderTessellationAndGeometryPointSize: u32,
+    pub shaderImageGatherExtended: u32,
+    pub shaderStorageImageExtendedFormats: u32,
+    pub shaderStorageImageMultisample: u32,
+    pub shaderStorageImageReadWithoutFormat: u32,
+    pub shaderStorageImageWriteWithoutFormat: u32,
+    pub shaderUniformBufferArrayDynamicIndexing: u32,
+    pub shaderSampledImageArrayDynamicIndexing: u32,
+    pub shaderStorageBufferArrayDynamicIndexing: u32,
+    pub shaderStorageImageArrayDynamicIndexing: u32,
+    pub shaderClipDistance: u32,
+    pub shaderCullDistance: u32,
+    pub shaderFloat64: u32,
+    pub shaderInt64: u32,
+    pub shaderInt16: u32,
+    pub shaderResourceResidency: u32,
+    pub shaderResourceMinLod: u32,
+    pub sparseBinding: u32,
+    pub sparseResidencyBuffer: u32,
+    pub sparseResidencyImage2D: u32,
+    pub sparseResidencyImage3D: u32,
+    pub sparseResidency2Samples: u32,
+    pub sparseResidency4Samples: u32,
+    pub sparseResidency8Samples: u32,
+    pub sparseResidency16Samples: u32,
+    pub sparseResidencyAliased: u32,
+    pub variableMultisampleRate: u32,
+    pub inheritedQueries: u32,
+}
+
+#[allow(dead_code)]
+#[cfg_attr(
+    target_os = "windows",
+    link(name = "C:/VulkanSDK/1.2.154.1/Lib/vulkan-1")
+)]
+#[cfg_attr(target_os = "linux", link(name = "vulkan"))]
 extern "C" {
     pub fn vkEnumerateInstanceExtensionProperties(
         pLayerName: *const std::os::raw::c_char,
@@ -847,5 +1120,42 @@ extern "C" {
         pCreateInfo: *const VkInstanceCreateInfo,
         pAllocator: *const VkAllocationCallbacks,
         pInstance: *mut *mut VkInstance,
+    ) -> VkResult;
+
+    #[cfg(target_os = "windows")]
+    pub fn vkCreateWin32SurfaceKHR(
+        instance: *const VkInstance,
+        pCreateInfo: *const VkWin32SurfaceCreateInfoKHR,
+        pAllocator: *const VkAllocationCallbacks,
+        pSurface: *mut *mut VkSurfaceKHR,
+    ) -> VkResult;
+
+    pub fn vkDestroySurfaceKHR(
+        instance: *const VkInstance,
+        surface: *const VkSurfaceKHR,
+        pAllocator: *const VkAllocationCallbacks,
+    );
+
+    pub fn vkEnumeratePhysicalDevices(
+        instance: *const VkInstance,
+        pPhysicalDeviceCount: *mut u32,
+        pPhysicalDevices: *mut *mut VkPhysicalDevice,
+    ) -> VkResult;
+
+    pub fn vkGetPhysicalDeviceProperties(
+        physicalDevice: *const VkPhysicalDevice,
+        pProperties: *mut VkPhysicalDeviceProperties,
+    );
+
+    pub fn vkGetPhysicalDeviceFeatures(
+        physicalDevice: *const VkPhysicalDevice,
+        pFeatures: *mut VkPhysicalDeviceFeatures,
+    );
+
+    pub fn vkEnumerateDeviceExtensionProperties(
+        physicalDevice: *const VkPhysicalDevice,
+        pLayerName: *const std::os::raw::c_char,
+        pPropertyCount: *mut u32,
+        pProperties: *mut VkExtensionProperties,
     ) -> VkResult;
 }
