@@ -1,2 +1,2 @@
-# rust_vulkan_teapot
-Project for testing rust and Vulkan
+# rust_vulkan_bindings_test
+Project for testing how bindings work in rust
